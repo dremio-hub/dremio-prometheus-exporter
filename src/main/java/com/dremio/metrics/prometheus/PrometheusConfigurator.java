@@ -41,7 +41,7 @@ public class PrometheusConfigurator extends ReporterConfigurator {
     @JsonCreator
     public PrometheusConfigurator(@JsonProperty("port") int port) {
         super();
-        this.port = (port > 0) ? port : 12543;
+        this.port = (port > 0) ? port : Integer.parseInt(System.getProperty("dremio.prometheus.port", "12543"));
 
     }
 
