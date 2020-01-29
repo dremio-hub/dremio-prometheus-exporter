@@ -7,7 +7,7 @@ This runs a [prometheus](https://https://prometheus.io/) endpoint which publishe
 
 1. change parent pom version in `pom.xml` to your dremio version (see https://github.com/dremio/dremio-oss to find the correct version) 
 1. `mvn clean install` 
-1. move `dremio-telemetry-prometheus-{version}.jar` to the `jars` directory in your dremio installation
+1. move `dremio-telemetry-prometheus-{version}-shaded.jar` to the `jars` directory in your dremio installation
 1. restart dremio
 
 ## configuration
