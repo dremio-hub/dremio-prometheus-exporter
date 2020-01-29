@@ -23,11 +23,40 @@
     <parent>
         <groupId>com.dremio</groupId>
         <artifactId>dremio-parent</artifactId>
-        <version>4.0.5-201911202046080257-19b10938</version>
+        <version>4.1.0-201912030136020081-49feeb75</version>
     </parent>
     <groupId>com.dremio.telemetry</groupId>
     <artifactId>dremio-telemetry-prometheus</artifactId>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>io.prometheus:*</include>
+                                    <include>org.hdrhistogram:*</include>
+                                </includes>
+                            </artifactSet>
+                            <relocations>
+                            </relocations>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>shaded</shadedClassifierName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>com.dremio.services</groupId>
