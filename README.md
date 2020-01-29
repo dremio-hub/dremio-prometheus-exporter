@@ -1,5 +1,5 @@
 # Prometheus exporter for Dremio metrics
-[![Build Status](https://travis-ci.org/rymurr/dremio-prometheus-exporter.svg?branch=master)](https://travis-ci.org/dremio-hub/dremio-prometheus-exporter)
+[![Build Status](https://travis-ci.org/rymurr/dremio-prometheus-exporter.svg?branch=master)](https://travis-ci.org/rymurr/dremio-prometheus-exporter)
 
 This runs a [prometheus](https://https://prometheus.io/) endpoint which publishes all dremio metrics to Prometheus
 
