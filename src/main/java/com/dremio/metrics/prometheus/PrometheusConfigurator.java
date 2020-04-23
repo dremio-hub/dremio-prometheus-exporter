@@ -19,10 +19,12 @@ import java.io.IOException;
 
 import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
+import com.dremio.telemetry.api.config.ConfigModule;
 import com.dremio.telemetry.api.config.ReporterConfigurator;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.databind.Module;
 import com.google.common.base.Objects;
 
 import io.prometheus.client.CollectorRegistry;
@@ -76,6 +78,17 @@ public class PrometheusConfigurator extends ReporterConfigurator {
     public void close() {
         if (server != null) {
             server.stop();
+        }
+    }
+
+    /**
+     * Module that may be added to a jackson object mapper
+     * so it can parse jmx config.
+     */
+    public static class Module extends ConfigModule {
+        @Override
+        public void setupModule(com.fasterxml.jackson.databind.Module.SetupContext context) {
+            context.registerSubtypes(PrometheusConfigurator.class);
         }
     }
 }
