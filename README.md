@@ -1,5 +1,5 @@
 # Prometheus exporter for Dremio metrics
-[![Build Status](https://travis-ci.org/rymurr/dremio-prometheus-exporter.svg?branch=master)](https://travis-ci.org/dremio-hub/dremio-prometheus-exporter)
+[![Build Status](https://travis-ci.org/rymurr/dremio-prometheus-exporter.svg?branch=master)](https://travis-ci.org/rymurr/dremio-prometheus-exporter)
 
 This runs a [prometheus](https://https://prometheus.io/) endpoint which publishes all dremio metrics to Prometheus
 
@@ -7,7 +7,7 @@ This runs a [prometheus](https://https://prometheus.io/) endpoint which publishe
 
 1. change parent pom version in `pom.xml` to your dremio version (see https://github.com/dremio/dremio-oss to find the correct version) 
 1. `mvn clean install` 
-1. move `dremio-telemetry-prometheus-{version}.jar` to the `jars` directory in your dremio installation
+1. move `dremio-telemetry-prometheus-{version}-shaded.jar` to the `jars` directory in your dremio installation
 1. restart dremio
 
 ## configuration
