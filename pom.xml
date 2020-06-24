@@ -23,7 +23,7 @@
     <parent>
         <groupId>com.dremio</groupId>
         <artifactId>dremio-parent</artifactId>
-        <version>4.2.2-202004211133290458-b550b6fa</version>
+        <version>4.3.1-202005210108500245-5dcfb82a</version>
     </parent>
     <groupId>com.dremio.telemetry</groupId>
     <artifactId>dremio-telemetry-prometheus</artifactId>
